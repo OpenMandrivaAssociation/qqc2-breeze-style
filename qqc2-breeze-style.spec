@@ -4,7 +4,7 @@
 
 Name: qqc2-breeze-style
 Version: 5.21.5
-Release: 1
+Release: 2
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: Breeze style for QtQuickComponents 2
 URL: http://kde.org/
@@ -25,10 +25,11 @@ BuildRequires: cmake(KF5IconThemes)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(X11)
 BuildRequires: cmake(PkgConfig)
+BuildRequires: cmake(Qt5X11Extras)
 BuildRequires: pkgconfig(x11)
 
 %description
-Breeze style for QtQuickComponents 2
+Breeze style for QtQuickComponents 2.
 
 %prep
 %autosetup -p1
