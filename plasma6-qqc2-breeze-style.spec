@@ -1,6 +1,6 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230527
+%define git 20230606
 
 Name: plasma6-qqc2-breeze-style
 Version: 5.240.0
@@ -54,4 +54,4 @@ Breeze style for QtQuickComponents 2.
 %{_qtdir}/plugins/kf6/kirigami/org.kde.breeze.so
 %{_qtdir}/qml/QtQuick/Controls.2/org.kde.breeze
 %{_qtdir}/qml/org/kde/breeze
-%{_qtdir}/qml/org/kde/kirigami.2/styles/org.kde.breeze
+%{_qtdir}/qml/org/kde/kirigami/styles/org.kde.breeze
