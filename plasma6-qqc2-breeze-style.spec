@@ -32,7 +32,6 @@ BuildRequires: cmake(KF6QuickCharts)
 BuildRequires: cmake(X11)
 BuildRequires: cmake(PkgConfig)
 BuildRequires: pkgconfig(x11)
-BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 Breeze style for QtQuickComponents 2.
