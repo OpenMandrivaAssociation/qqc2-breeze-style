@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma6-qqc2-breeze-style
-Version: 6.0.0
+Version: 6.0.1
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/qqc2-breeze-style/-/archive/%{gitbranch}/qqc2-breeze-style-%{gitbranchd}.tar.bz2#/qqc2-breeze-style-%{git}.tar.bz2
@@ -56,4 +56,3 @@ Breeze style for QtQuickComponents 2.
 %{_libdir}/cmake/QQC2BreezeStyle
 %{_qtdir}/plugins/kf6/kirigami/platform/org.kde.breeze.so
 %{_qtdir}/qml/org/kde/breeze
-%{_qtdir}/qml/org/kde/kirigami/styles/org.kde.breeze
