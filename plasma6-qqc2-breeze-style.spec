@@ -13,7 +13,7 @@ Source0:	https://invent.kde.org/plasma/qqc2-breeze-style/-/archive/%{gitbranch}/
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/qqc2-breeze-style-%{version}.tar.xz
 %endif
 Summary: Breeze style for QtQuickComponents 2
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: Graphical desktop/KDE
 BuildRequires: cmake(ECM)
