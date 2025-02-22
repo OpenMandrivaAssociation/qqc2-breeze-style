@@ -6,7 +6,7 @@
 
 Name: plasma6-qqc2-breeze-style
 Version: 6.3.1
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/qqc2-breeze-style/-/archive/%{gitbranch}/qqc2-breeze-style-%{gitbranchd}.tar.bz2#/qqc2-breeze-style-%{git}.tar.bz2
 %else
@@ -38,6 +38,14 @@ BuildRequires: pkgconfig(x11)
 %description
 Breeze style for QtQuickComponents 2.
 
+%package devel
+Summary:	CMake modules for locating the QQC2 Breeze style
+Group:		Development/Tools
+Requires:	%{name} = %{EVRD}
+
+%description devel
+CMake modules for locating the QQC2 Breeze style
+
 %prep
 %autosetup -p1 -n qqc2-breeze-style-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
@@ -53,6 +61,8 @@ Breeze style for QtQuickComponents 2.
 %ninja_install -C build
 
 %files
-%{_libdir}/cmake/QQC2BreezeStyle
 %{_qtdir}/plugins/kf6/kirigami/platform/org.kde.breeze.so
 %{_qtdir}/qml/org/kde/breeze
+
+%files devel
+%{_libdir}/cmake/QQC2BreezeStyle
