@@ -4,9 +4,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-qqc2-breeze-style
+Name: qqc2-breeze-style
 Version: 6.3.4
-Release: %{?git:0.%{git}.}2
+Release: %{?git:0.%{git}.}3
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/qqc2-breeze-style/-/archive/%{gitbranch}/qqc2-breeze-style-%{gitbranchd}.tar.bz2#/qqc2-breeze-style-%{git}.tar.bz2
 %else
@@ -34,6 +34,12 @@ BuildRequires: cmake(KF6QuickCharts)
 BuildRequires: cmake(X11)
 BuildRequires: cmake(PkgConfig)
 BuildRequires: pkgconfig(x11)
+# Renamed after 6.0 2025-05-03
+%rename plasma6-qqc2-breeze-style
+
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Breeze style for QtQuickComponents 2.
@@ -42,23 +48,11 @@ Breeze style for QtQuickComponents 2.
 Summary:	CMake modules for locating the QQC2 Breeze style
 Group:		Development/Tools
 Requires:	%{name} = %{EVRD}
+# Renamed after 6.0 2025-05-03
+%rename plasma6-qqc2-breeze-style-devel
 
 %description devel
 CMake modules for locating the QQC2 Breeze style
-
-%prep
-%autosetup -p1 -n qqc2-breeze-style-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
 
 %files
 %{_qtdir}/plugins/kf6/kirigami/platform/org.kde.breeze.so
