@@ -5,8 +5,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: qqc2-breeze-style
-Version: 6.3.4
-Release: %{?git:0.%{git}.}3
+Version: 6.3.5
+Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/qqc2-breeze-style/-/archive/%{gitbranch}/qqc2-breeze-style-%{gitbranchd}.tar.bz2#/qqc2-breeze-style-%{git}.tar.bz2
 %else
